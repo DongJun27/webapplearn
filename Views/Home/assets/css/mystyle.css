@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+/*폰트 url*/
+
+body {
+    margin: 0px; /*상자 여백*/
+    padding: 0px; /*상자 부피*/
+}
+
+header{
+    width: 1200px;
+    height:130px;
+    margin: auto; /*가운데*/
+    padding-top: 20px;
+}
+
+#logo {
+    font-family: 'Nanum Pen Script', cursive; /*폰트 적용*/
+    float: left; /*옆에 붙이기*/
+    font-size: 30px;
+    margin-right: 50px;
+    margin-left: 35px;
+    position:relative; /*위치 조정*/
+    top: -12px; /*여백*/
+    font-weight: bold; /*글씨 굵게*/
+}
+
+#logo p {
+    color: gray;
+    font-size: 18px;
+    font-weight: bolder;
+    line-height: 0.9; /*글자 간 높이*/
+}
+
+#logo p span {
+    color: orange;
+    font-size: 160px;
+    line-height: 0.5;
+}
+
+nav {
+    font-family: 'Nanum Pen Script', cursive;
+    float: right;
+    margin-top: 17px;
+}
+
+nav ul {
+    list-style-type: none; /*리스트 첨자*/
+}
+
+nav ul > li {
+    display: inline; /*가로 정렬*/
+    padding: 0px 25px;
+    font-size: 30px;
+    font-weight: bold;
+    border-right: thin solid rgba(0,0,0,0.3); /*테두리 선 긋기*/
+}
+/*last-child 마지막 요소 지정*/
+nav ul > li:last-child {
+    border-right: none;
+}
+
+nav ul > li > a {
+    transition: 0.5s; /*모션*/
+    position: relative;
+    text-decoration: none;
+    color: gray;
+}
+/*hover 마우스 올라 갔을때*/
+nav ul > li > a:hover {
+    color: coral;
+    font-size: 2.5rem; /*rem 원래 글자값의 기준*/
+    transition: 0.5s;
+}
+
+.navMobile {
+    float: right;
+    display: none;
+}
+
+section {
+    margin: 50px 0;
+}
+/*id 불러오기 # */
+#ban {
+    margin: 0px;
+    background-color: black;
+}
+/*class 불러오기 . */
+.banner {
+    width: 100%;
+    height: 100vh; /*보이는 화면 크기에 맞게*/
+    background-color: coral;
+    background-image: url(../image/bg01.jpg); /*이미지 삽입*/
+    background-repeat: no-repeat; /*이미지 반복*/
+    background-size: cover; /*박스 크기에 맞게*/
+    background-position: center bottom; /*보이는 기준*/
+    background-attachment: fixed; /*이미지 고정*/
+}
+/*.banner보다 전에 실행 할 것들*/
+.banner::before {
+    content: ""; /*가상의 박스*/
+    position: absolute; /*기준 잡기*/
+    top:151px;
+    left:0px;
+    right:0px;
+    bottom:-151px; /*상하좌우 다 지정해야함*/
+    opacity:0.3; /*투명도*/
+    background-color: black;
+}
+
+.title {
+    position: relative;
+    top: 200px;
+    text-align: center; /*글자 정렬*/
+    width: 500px;
+    font-size: 50px;
+    margin: auto;
+    color: white;
+}
+
+.bannercontent .bannerTxt {
+    font-size: 15px;
+    position: relative;
+    top: 210px;
+    width: 300px;
+    margin: auto;
+    padding: 48px;
+    text-align: center;
+    color: white;
+}
+
+.bannercontent .btn {
+    position: relative;
+    top: 200px;
+    width: 120px;
+    margin: auto;
+    text-align: center;
+    padding: 10px 40px;
+    background-color: rgb(255, 97, 40);
+    border-radius: 60px; /*테두리 곡선*/
+    font-size: 20px;
+    color: white;
+    font-weight: 900;
+    transition: 0.5s;
+    font-size: 30px;
+    border: thin solid gray;
+}
+
+.bannercontent .btn:hover {
+    position: relative;
+    top: 190px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 10px 5px rgba(0,0,0,0.5);/*그림자*/
+    background-color: rgb(252, 121, 73);
+    opacity: 0.7;
+}
+
+.box {
+    height:1000px;
+}
+
+/*화면 크기별 반응 설정 (max, min 유의)*/
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/*@media only screen and (max-width: 600px) {
+    nav {
+        display: none;
+    }
+    .navMobile {
+        display: block;
+    }
+    header {
+    width: 100%;
+    }
+}*/
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 991px) {
+    nav {
+        display: none;
+    }
+    .navMobile {
+        display: block;
+        margin-right: 20px;
+        margin-top: 20px;
+        font-size: 40px;
+        color: rgb(65, 65, 65);
+    }
+    header {
+    width: 100%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    nav {
+        display: block;
+    }
+    .navMobile {
+        display: none;
+    }
+    header {
+     width: 1200px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    header {
+        width: 1200px;
+       }
+}
